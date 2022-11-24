@@ -1,3 +1,8 @@
+
+<?php
+require('php/connection.inc.php');
+require('php/function.inc.php');
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -356,19 +361,35 @@
                         <div class="topic-text">Contact Us</div>
                         <p>If you have any queries, you can send us a message from here. It's our pleasure to help you.
                         </p>
-                        <form action="#">
-                            <div class="input-box">
-                                <input type="text" placeholder="Enter your name">
+                        <form method="POST" enctype="multipart/form-data" id="query_form">
+                            <div class="input-box" class="form-control">
+                                <input class="input1" type="text" id="name" placeholder="Name">
+                                <div>
+                                    <p class="shadow-input1 errorField" id="name_er"></p>
+                                </div>
+
                             </div>
                             <div class="input-box">
-                                <input type="text" placeholder="Enter your email">
+                                <input class="input1" type="text" id="email" placeholder="Email">
+                                <div>
+                                    <p class="shadow-input1 errorField " id="email_er"></p>
+                                </div>
                             </div>
                             <div class="input-box message-box">
-                                <textarea required="required" placeholder="Type your query.."></textarea>
+                                <textarea class="input1" id="message" placeholder="Message"></textarea>
+                                <div>
+                                    <p class="shadow-input1 errorField" id="message_er"></p>
+                                </div>
                             </div>
 
-                            <div class="button">
-                                <input type="button" value="Send Now">
+                            <div class="">
+                                <button class="contact1-form-btn" type="button" onclick="submit_query()">
+                                
+                                    <span class="submit-query btn btn-primary   ">
+                                        Send Query
+                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -816,7 +837,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="php/custom.js"></script>
 
     <!-- Animation Lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
